@@ -1,0 +1,34 @@
+<div id="div-main-body">
+
+<h1>Diploma#new</h1>
+<p>Find me in app/views/diploma/new.html.erb</p>
+
+<%= form_for @new_diploma, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+	
+	<div class="form-group input-group hidden">
+    <div class="input-group-prepend">
+        <span class="input-group-text"> </span>
+     </div>
+     <%= f.text_field :user_id, value: current_user.id, placeholder: current_user.id %>
+    </div>
+
+    <div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text"> </span>
+     </div>
+     <%= f.text_field :title, autofocus: true, placeholder: "Nom du Document", class: "form-control" %>
+    </div>
+
+    <div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text"> </span>
+     </div>
+     <%= f.file_field :image %>
+    </div>
+    
+	<div class="form-group">
+      <%= f.submit "Enregistrer", class: "btn btn-primary btn-block" %>
+    </div> <!-- form-group// -->   
+
+<% end %>
+</div>

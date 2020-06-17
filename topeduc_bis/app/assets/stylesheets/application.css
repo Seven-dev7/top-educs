@@ -1,0 +1,165 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require style_1.css
+ *= require assets/imagehover.min.css
+ *= require assets/bootstrap.min.css
+ *= require assets/font-awesome.min.css
+ *= require simple_calendar
+ */
+
+#feature, #organisations, #work-shop, #faculity-member, #contact {
+	padding-top: 100px;
+}
+
+#identite, #contrats, #messages, #calendar {
+	padding-top: 80px;
+}
+
+#div-main-body {
+	margin-top: 150px;
+}
+
+#div-main-body-profile {
+	margin-top: 90px;
+}
+
+#div-main-body2 {
+	margin-top: 80px;
+}
+#div-main-body3 {
+	margin: 80px 0 40px 0;
+	display: flex;
+	justify-content: center;	
+}
+
+#div-date-calendar {
+	background-color: #81E069;
+	border-radius: 10px;
+	color: #81E069;
+
+	text-align: center;
+}
+
+#div-date-calendar:hover {
+	color: black;
+}
+
+#div-date-work-contract {
+	background-color: #3045FF;
+	border-radius: 10px;
+	color: white;
+	text-align: center;
+}
+
+
+#div-border {
+	border: solid;
+	margin: 20px;
+	padding: 20px;
+}
+
+#div-border-profile {
+	padding: 10px;
+	margin: 0 10px 0 10px;
+}
+
+#profile-name {
+	font-size: x-large;
+}
+
+#div-profile-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+#div-profile-sub-header-icons{
+	display: flex;
+	flex-direction: row;
+}
+#div-icon-legend {
+	margin-top: 15px;
+	font-weight: bold;
+}
+
+#div-icon-legend-1 {
+	margin-top: 15px;
+	font-weight: bold;
+	margin-left: 8px;
+}
+
+#div-icon-legend-2 {
+	margin-top: 15px;
+	font-weight: bold;
+	margin-left: -18px;
+}
+#div-icon-legend-3 {
+	margin-top: 15px;
+	font-weight: bold;
+	margin-left: -5px;
+}
+#div-icon-legend-4 {
+	margin-top: 15px;
+	font-weight: bold;
+	margin-left: -2px;
+}
+#div-icon-1 {
+	border: solid;
+	border-radius: 40px;
+	margin: 10px 15px 0 15px;
+	width: 60px;
+	height: 60px;
+	padding: 14px 0 0 15px;
+}
+
+#div-icon-3 {
+	border: solid;
+	border-radius: 40px;
+	margin: 10px 15px 0 15px;
+	width: 60px;
+	height: 60px;
+	padding: 14px 0 0 17px;
+}
+
+#div-icon-2 {
+	border: solid;
+	border-radius: 40px;
+	margin: 10px 15px 0 15px;
+	width: 60px;
+	height: 60px;
+	padding: 15px 0 0 12px;
+}
+
+#div-navbar-user {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 10% 50px 10%;
+	padding: 5px;
+	font-size: large; 
+	border: solid;
+	border-radius: 10px;
+}
+
+#identite-info {
+	display: flex;
+	justify-content: space-between;
+}
+
+#identite-sub {
+	border: solid;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+

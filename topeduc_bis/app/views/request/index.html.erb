@@ -1,0 +1,57 @@
+<div id="div-main-body">
+	<h1>Request#index</h1>
+	<p>Find me in app/views/request/index.html.erb</p>
+
+
+	<div id="div-border">
+		Devis en Attente
+		<div id="div-border">
+			<% @all_requests.each do |request| %>
+				<% if request.user_id == current_user.id && request.starts_at > DateTime.now && request.accepted? == nil %>
+					<div>Devis n°<%= request.id %> </div>
+					<div>Client n°<%= request.client_id %></div>
+					<div>Utilisateur n°<%= request.user_id %></div>
+					<div>Poste mission n°<%= request.job %></div>
+					<div>Démarre le: <%= request.starts_at.strftime "%Y-%m-%d" %></div>
+					<div>Se termine le: <%= request.ends_at.strftime "%Y-%m-%d" %></div>
+					<div>Taux horaire: <%= request.hourly_rate %> €/h</div>
+					<div>Adresse mission: <%= request.adress %></div>
+					<div>Zip Code: <%= request.ZIP_CODE %></div>
+					<div>Permis: <%= request.driving_licence %></div>
+					<div>Commentaires: <%= request.comments %></div>
+					<div>Autre/Divers: <%= request.other %></div>
+					<div>Réponse: <%= request.answer_comments %></div>
+					<div>Crée le: <%= request.created_at %></div>		
+
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+
+
+	<div id="div-border">
+		Devis refusés
+		<div id="div-border">
+			<% @all_requests.each do |request| %>
+				<% if request.user_id == current_user.id && request.accepted? == false %>
+					<div>Devis n°<%= request.id %> </div>
+					<div>Client n°<%= request.client_id %></div>
+					<div>Utilisateur n°<%= request.user_id %></div>
+					<div>Poste mission n°<%= request.job %></div>
+					<div>Démarre le: <%= request.starts_at.strftime "%Y-%m-%d" %></div>
+					<div>Se termine le: <%= request.ends_at.strftime "%Y-%m-%d" %></div>
+					<div>Taux horaire: <%= request.hourly_rate %> €/h</div>
+					<div>Adresse mission: <%= request.adress %></div>
+					<div>Zip Code: <%= request.ZIP_CODE %></div>
+					<div>Permis: <%= request.driving_licence %></div>
+					<div>Commentaires: <%= request.comments %></div>
+					<div>Autre/Divers: <%= request.other %></div>
+					<div>Réponse <%= request.answer_comments %></div>
+					<div>Crée le: <%= request.created_at %></div>
+					
+
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>

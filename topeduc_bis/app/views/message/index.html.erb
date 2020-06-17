@@ -1,0 +1,51 @@
+<h1>Messages#index</h1>
+<p>Find me in app/views/messages/index.html.erb</p>
+
+<div id="div-border">
+	<div id="messages">
+	<h4>Messages</h4>
+	<div>
+		<%= link_to 'Envoyer un message', new_message_path %>
+	</div>
+	<div id="div-border">
+		<h5>Messages reçus</h5>
+
+			<% @all_current_user_received_messages.each do |msg_r| %>
+				<div id="div-border">
+				<% if msg_r.sender_id == current_user.id %>
+					<div> <%= button_to 'Edit', edit_message_path(msg_r.id), method: :get %></div>
+					<div> <%= button_to 'x', message_path(msg_r.id), method: :delete %> </div>
+				<% end %>
+
+					<div>Message N° <%= msg_r.id %> </div>
+					<div>Envoyé par: <%= msg_r.sender_id %> </div>
+					<div>Envoyé à: <%= msg_r.recipient_id %> </div>
+					<div>Recu le: <%= msg_r.created_at.strftime "%Y-%m-%d" %></div>
+					<br>
+					<div> Titre: <%= msg_r.title %> </div>
+					<div> Contenu: <%= msg_r.body %> </div>
+				</div>
+			<% end %>
+	</div>
+		<br>
+	<div id="div-border">
+		<h5>Messages envoyés</h5>
+	  		<% @all_current_user_sent_messages.each do |msg_s| %>
+	  		<div id="div-border">
+	  			<% if msg_s.sender_id == current_user.id %>
+					<div> <%= button_to 'Edit', edit_message_path(msg_s.id), method: :get %></div>
+					<div> <%= button_to 'x', message_path(msg_s.id), method: :delete %> </div>
+				<% end %>
+					
+	  			<div>Message N° <%= msg_s.id %> </div>
+	  			<div>Envoyé par: <%= msg_s.sender_id %> </div>
+				<div>Envoyé à: <%= msg_s.recipient_id %> </div>
+	  			<div>Envoyé le: <%= msg_s.created_at.strftime "%Y-%m-%d" %></div>
+	  			<br>
+				<div> Titre: <%= msg_s.title %> </div>
+				<div> Contenu: <%= msg_s.body %> </div>
+			</div>
+		<% end %>
+	</div>
+</div>
+</div>

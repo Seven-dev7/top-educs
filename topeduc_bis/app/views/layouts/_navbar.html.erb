@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to image_tag('logo.jpg', width: 170, height: 50), root_path, :class => "navbar-brand" %>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        
+          <ul class="nav navbar-nav navbar-right">
+            <% if current_page?(root_path) %>
+              <li><a href="#feature">Identité</a></li>
+              <li><a href="#organisations">Engagements</a></li>
+              <li><a href="#work-shop">Valeurs</a></li>
+              <li><a href="#faculity-member">Equipe</a></li>
+              <li><a href="#contact">Contact</a></li>
+            <% else %>
+              <li> <%= link_to 'Home', root_path %></li>
+              <li><%= link_to 'Dashboard', static_secret_page_path %></li>
+              <li><%= link_to 'Messages', message_index_path %></li>
+              <li><%= link_to 'Calendrier', calendar_index_path %></li>
+            <% end %>
+
+          <% if user_signed_in? %>
+            <li><a href="#pricing"><%= button_to('Me déconnecter', destroy_user_session_path, method: :delete, :class => "btn-trial") %></a></li>
+            <li><%= link_to 'Mon profil', static_secret_page_path %></li>
+          <% else %>
+            <li><%= link_to "S'inscrire", new_user_registration_path %></a></li>
+            <li class="btn-trial"><%= link_to "Se connecter", user_session_path %></a></li>
+          <% end %>
+          </ul>
+      </div>
+    </div>
+  </nav>
+
+  <%= render "layouts/flash" %>

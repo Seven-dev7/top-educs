@@ -1,0 +1,20 @@
+<div id="div-main-body">
+<div id="div-border">
+
+	<h1>Client#index</h1>
+	<p>Find me in app/views/client/index.html.erb</p>
+	
+	<div>
+		<% @all_clients.each do |client| %>
+			<%= client.id %>
+			<%= client.name %>
+			<%= client.n_tva %>
+			<%= client.n_siret %>
+			<%= client.address %>
+			<%= client.zip_code %>
+			<%= client.created_at.strftime "%Y-%m-%d" %>
+
+		<% end %>
+	</div>
+</div>
+</div>

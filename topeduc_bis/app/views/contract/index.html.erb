@@ -1,0 +1,105 @@
+<div id="div-main-body">
+
+	<h1>Contract#index</h1>
+	<p>Find me in app/views/contract/index.html.erb</p>
+
+	<div id="div-border">
+		<div id="div-border">
+			Contrat en cours
+		<div id="div-border">
+			<% @all_contracts.each do |contrat| %>
+				<% if contrat.user_id == current_user.id && contrat.starts_at < DateTime.now && contrat.ends_at > DateTime.now %>
+					<div>Contract n°<%= contrat.id %> </div>
+					<div>Client n°<%= contrat.client_id %></div>
+					<div>Utilisateur n°<%= contrat.user_id %></div>
+					<div>Poste mission n°<%= contrat.job %></div>
+					<div>From Devis n°<%= contrat.request_id %></div>
+					<div>Démarre le: <%= contrat.starts_at.strftime "%Y-%m-%d" %></div>
+					<div>Se termine le: <%= contrat.ends_at.strftime "%Y-%m-%d" %></div>
+					<div>Taux horaire: <%= contrat.hourly_rate %> €/h</div>
+					<div>Adresse mission: <%= contrat.adress %></div>
+					<div>Zip Code: <%= contrat.ZIP_CODE %></div>
+					<div>Commentaires: <%= contrat.comments %></div>
+					<div>Crée le: <%= contrat.created_at %></div>
+
+				<% end %>
+			<% end %>
+		</div>
+		</div>
+
+		<div id="div-border">
+			Contrats terminés
+			<div id="div-border">
+			<% @all_contracts.each do |contrat| %>
+				<% if contrat.user_id == current_user.id && contrat.ends_at < DateTime.now %>
+					<div>Contract n°<%= contrat.id %> </div>
+					<div>Client n°<%= contrat.client_id %></div>
+					<div>Utilisateur n°<%= contrat.user_id %></div>
+					<div>Poste mission n°<%= contrat.job %></div>
+					<div>From Devis n°<%= contrat.request_id %></div>
+					<div>Démarre le: <%= contrat.starts_at.strftime "%Y-%m-%d" %></div>
+					<div>Se termine le: <%= contrat.ends_at.strftime "%Y-%m-%d" %></div>
+					<div>Taux horaire: <%= contrat.hourly_rate %> €/h</div>
+					<div>Adresse mission: <%= contrat.adress %></div>
+					<div>Zip Code: <%= contrat.ZIP_CODE %></div>
+					<div>Commentaires: <%= contrat.comments %></div>
+					<div>Crée le: <%= contrat.created_at %></div>
+
+				<% end %>
+			<% end %>
+		</div>
+		</div>
+
+		<div id="div-border">
+			Contrats à venir
+
+			<div id="div-border">
+			<% @all_contracts.each do |contrat| %>
+				<% if contrat.user_id == current_user.id && contrat.starts_at > DateTime.now %>
+
+					<div>Contract n°<%= contrat.id %> </div>
+					<div>Client n°<%= contrat.client_id %></div>
+					<div>Utilisateur n°<%= contrat.user_id %></div>
+					<div>Poste mission n°<%= contrat.job %></div>
+					<div>From Devis n°<%= contrat.request_id %></div>
+					<div>Démarre le: <%= contrat.starts_at.strftime "%Y-%m-%d" %></div>
+					<div>Se termine le: <%= contrat.ends_at.strftime "%Y-%m-%d" %></div>
+					<div>Taux horaire: <%= contrat.hourly_rate %> €/h</div>
+					<div>Adresse mission: <%= contrat.adress %></div>
+					<div>Zip Code: <%= contrat.ZIP_CODE %></div>
+					<div>Commentaires: <%= contrat.comments %></div>
+					<div>Crée le: <%= contrat.created_at %></div>
+
+				<% end %>
+			<% end %>
+		</div>
+		</div>
+	</div>
+
+
+
+	<div id="div-border">
+
+		Tous les contrats 
+		
+		<div id="div-border">
+			<% @all_contracts.each do |contrat| %>
+				<% if contrat.user_id == current_user.id %>
+					<div>Contract n°<%= contrat.id %> </div>
+					<div>Client n°<%= contrat.client_id %></div>
+					<div>Utilisateur n°<%= contrat.user_id %></div>
+					<div>Poste mission n°<%= contrat.job %></div>
+					<div>From Devis n°<%= contrat.request_id %></div>
+					<div>Démarre le: <%= contrat.starts_at.strftime "%Y-%m-%d" %></div>
+					<div>Se termine le: <%= contrat.ends_at.strftime "%Y-%m-%d" %></div>
+					<div>Taux horaire: <%= contrat.hourly_rate %> €/h</div>
+					<div>Adresse mission: <%= contrat.adress %></div>
+					<div>Zip Code: <%= contrat.ZIP_CODE %></div>
+					<div>Commentaires: <%= contrat.comments %></div>
+					<div>Crée le: <%= contrat.created_at %></div>
+
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>

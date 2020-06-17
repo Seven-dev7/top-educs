@@ -1,0 +1,53 @@
+<h1>Calendar#index</h1>
+<p>Find me in app/views/calendar/index.html.erb</p>
+
+<div id="div-border">
+	
+	<div id="calendar">
+		<h4>Calendrier</h4>
+
+		<%= month_calendar do |date| %>
+			<% b = 0 %>
+			<%= date %>
+			<% length_contract = @user_contract_starts_at.length %>
+
+			<% while length_contract > 0 %>
+				<% if date == Contract.find(@user_contract_starts_at[b]).starts_at %>
+					<div id="div-date-work-contract"> 
+						<div> Work day </div> 
+					</div>
+				<% end %>
+				
+				<% b += 1 %>
+				<% length_contract -= 1 %>
+			<% end %>
+
+
+			<% length_avail = @user_avail_starts_at.length %>
+			<% a = 0 %>
+
+			<% while length_avail > 0 %>
+				<% if date == Calendar.find(@user_avail_starts_at[a]).starts_at %>
+					<div id="div-date-calendar"> 
+						<div> Dispo ok </div> 
+					</div>
+				
+				<% end %>
+				<% f = Calendar.find(@user_avail_starts_at[a]).duration - 1 %>
+				<% while f > 0 %>
+
+					<% if date == Calendar.find(@user_avail_starts_at[a]).starts_at + f.days %>
+						<div id="div-date-calendar"> 
+							<div> Dispo ok </div> 
+						</div>
+					<% end %>
+					
+					<% f -= 1 %>
+				<% end %>
+				<% a += 1 %>
+				<% length_avail -= 1 %>
+			<% end %>	
+		<% end %>
+
+</div>
+</div>
