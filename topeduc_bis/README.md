@@ -10,5 +10,10 @@
 DB.
 Environnement technique : Ruby (2.5.1), Ruby on Rails (6.0.0), Asset Pipeline, Heroku,
 Devise, Shrine, Rspec, Sendgrid, Administrate, Simple Calendar, RubyXL, PostgreSQL.
+* Database creation
+
+	` rails db:create db:migrate db:seed `
+	`rails s`
+
 
 http://gestion-topeduc.herokuapp.com
